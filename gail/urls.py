@@ -7,6 +7,9 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+
+    # adding my nutrients stuff
+    url(r'^nutrients/', include('nutrients.urls')),
 )
 
 from .views import HomePageView
