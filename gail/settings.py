@@ -101,6 +101,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+### added 1/14/15
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+STATIC_ROOT= os.path.join(PROJECT_ROOT,'static')
+# STATIC_ROOT = os.path.join(os.getcwd(),'static')
+STATICFILES_DIRS = ()
+
+# heroku run python manage.py collectstatic
+# puts into static_root
+
 # Parse database configuration from $DATABASE_URL
 
 ### DATABASES = { 'default' : dj_database_url.config()}
@@ -121,4 +131,43 @@ try:
 except Exception as e:
   pass
 
+##########  added 1/15
 
+import logging
+import logging.config
+
+if DEBUG:
+    # will output to your console
+    logging.basicConfig(
+        level = logging.DEBUG,
+        format = '%(asctime)s %(levelname)s %(message)s',
+        filename = '/tmp/access.log',
+        filemode = 'a'
+    )
+else:
+    # will output to logging file
+    logging.basicConfig(
+        level = logging.DEBUG,
+        format = '%(asctime)s %(levelname)s %(message)s',
+        filename = '/tmp/access.log',
+        filemode = 'a'
+    )
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/tmp/debug.log',
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
