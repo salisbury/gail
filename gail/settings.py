@@ -105,9 +105,11 @@ STATIC_URL = '/static/'
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 #PROJECT_ROOT = os.path.abspath(os.path.dirname(__name__))
-STATIC_ROOT= os.path.join(PROJECT_ROOT,'static')
+STATIC_ROOT= os.path.join(PROJECT_ROOT,'/static/')
 # STATIC_ROOT = os.path.join(os.getcwd(),'static')
 STATICFILES_DIRS = ()
+
+ADMIN_MEDIA_PREFIX = ‘/static/admin/’
 
 # heroku run python manage.py collectstatic
 # the above ran automatically on deploy.
