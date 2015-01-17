@@ -104,11 +104,13 @@ STATIC_URL = '/static/'
 ### added 1/14/15
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+#PROJECT_ROOT = os.path.abspath(os.path.dirname(__name__))
 STATIC_ROOT= os.path.join(PROJECT_ROOT,'static')
 # STATIC_ROOT = os.path.join(os.getcwd(),'static')
 STATICFILES_DIRS = ()
 
 # heroku run python manage.py collectstatic
+# the above ran automatically on deploy.
 # puts into static_root
 
 # Parse database configuration from $DATABASE_URL

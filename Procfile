@@ -1,1 +1,2 @@
-web: gunicorn gail.wsgi --log-file -
+web:  python gail/manage.py collectstatic --noinput; gunicorn gail.wsgi --log-file -
+
