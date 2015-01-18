@@ -4,14 +4,14 @@ import os
 DEBUG = True
 TEMPLATE_DEBUG = True
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "gail",
-        "USER": "postgresql",
-        "PASSWORD": "postgresql",
-        "HOST": "localhost",
-        "PORT": "5432",
-    }
-}
+#DATABASES = {
+#    "default": {
+#        "ENGINE": "django.db.backends.postgresql_psycopg2",
+#        "NAME": "gail",
+#        "USER": "postgresql",
+#        "PASSWORD": "postgresql",
+#        "HOST": "localhost",
+#        "PORT": "5432",
+#    }
+#}
 
