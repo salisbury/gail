@@ -109,7 +109,7 @@ STATIC_ROOT= os.path.join(PROJECT_ROOT,'/static/')
 # STATIC_ROOT = os.path.join(os.getcwd(),'static')
 STATICFILES_DIRS = ()
 
-ADMIN_MEDIA_PREFIX = ‘/static/admin/’
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # heroku run python manage.py collectstatic
 # the above ran automatically on deploy.
@@ -117,13 +117,15 @@ ADMIN_MEDIA_PREFIX = ‘/static/admin/’
 
 # Parse database configuration from $DATABASE_URL
 
-### DATABASES = { 'default' : dj_database_url.config()}
+DATABASES = { 'default' : dj_database_url.config()}
 # we only need the engine name, as heroku takes care of the rest
-### DATABASES = {
-###     "default": {
-###         "ENGINE": "django.db.backends.postgresql_psycopg2",
-###     }
-### }
+DATABASES = {
+     "default": {
+         "ENGINE": "django.db.backends.postgresql_psycopg2",
+     }
+}
+#         "NAME": "gail",
+######
 DATABASES = {'default': dj_database_url.config(default='postgres://postgresql:postgresql@localhost:5432/gail')}
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
